@@ -11,6 +11,11 @@ var button = document.getElementById("album");
 if(button){
     button.addEventListener("click",loadAlbum);
 }
+
+var button = document.getElementById("alb");
+if(button){
+    button.addEventListener("click",loadPics);
+}
 var connection = 0;
 
 async function fetchAlbumAsync(){
@@ -21,6 +26,12 @@ async function fetchAlbumAsync(){
 
 async function fetchUserAsync(){
     let response = await fetch('https://jsonplaceholder.typicode.com/users');
+    let post = await response.json();
+    return post;
+}
+
+async function fetchPicsAsync(){
+    let response = await fetch('https://jsonplaceholder.typicode.com/photos?albumId=1');
     let post = await response.json();
     return post;
 }
@@ -38,7 +49,7 @@ function loadAlbum(){
                     <div class="card-body">
                             <h4 class="card-title">ID: ${post[connection].id}</h4>
                             <p class = "card-text">Title: ${post[connection].title}</p>
-                            <a href="#" class="btn btn-primary stretched-link" align= "center">See Album</a><br>                       
+                            <a id = "alb" href="albumselect.html" class="btn btn-primary stretched-link" align= "center">See Album</a><br>                       
                         </div>
                 </div>
             </div>`
@@ -82,6 +93,32 @@ function loadPhotos(){
     })
     .then((post)=>{
         for (let index = 0; index < 2; index++) {
+            div.innerHTML+=`
+            <div class="card-columns" style="width:1200px">
+            <div class="col-sm-6">
+                <img id="myImg" class="card-img-top img-fluid" src="${post[connection].thumbnailUrl}" alt="Card image" style="width:50%">
+                    <div class="card-body">
+                        <h4 class = "card-title">ID: ${post[connection].id}</h4>
+                        <p class = "card-text">${post[connection].title}</p><br><br>                                              
+                    </div>
+                </div>
+            </div>`
+            connection = connection + 1;
+        }
+    })
+    .catch((error)=>{
+        console.log(error);
+    
+    });
+}
+
+function loadPics(){
+    fetch('https://jsonplaceholder.typicode.com/photos?albumId=1')
+    .then((res)=>{
+        return res.json();
+    })
+    .then((post)=>{
+        for (let index = 0; index < 100; index++) {
             div.innerHTML+=`
             <div class="card-columns" style="width:1200px">
             <div class="col-sm-6">
