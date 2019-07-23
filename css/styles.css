@@ -1,21 +1,37 @@
 body {
-background-image: url("/assets/img/background.jpg");
-background-position: center;
-background-repeat: no-repeat;
+background-image: url('file:///C:/Users/Aniket/Documents/GitHub/tech-challenge/assets/img/africa.jpg');
 background-size: cover;
-position: relative;
+background-repeat: repeat;
 }
 
 #btn {
-position: relative;
+position: fixed;
+right:20px;
+}
+
+#album {
+position: fixed;
+right:20px;
 }
 
 .container {
 position: absolute;
 top: 100px;
-right: 100px;
-width:1500px;
+right: 120px;
 margin:0 auto 0 auto;
 padding:5px;
-background:#ffffff; 
+background: #7a848893;; 
+color: white;
+}
+
+.navbar a {
+float: left;  
+padding: 12px;
+color: white;
+text-decoration: none;
+font-size: 17px;
+}
+
+.navbar a:hover {
+color: rgb(138, 133, 133);
 }
