@@ -32,11 +32,13 @@ function loadAlbum(){
             div.innerHTML+=`
             <div class="card-columns" style="width:1200px">
                 <div class="col-sm-6">
-                    <img class="card-img-top" src="assets/img/album.png" alt="Card image" style="width:50%">
-                        <div class="card-body">
+                <a href="albumselect.html">
+                    <img id= "alb" class="card-img-top" src="assets/img/album.png" alt="Card image" style="width:50%">
+                    </a>    
+                    <div class="card-body">
                             <h4 class="card-title">ID: ${post[connection].id}</h4>
                             <p class = "card-text">Title: ${post[connection].title}</p>
-                            <a href="#" class="btn btn-primary stretched-link" align= "center">See Album</a><br>                       
+                            <a id="alb" href="albumselect.html" class="btn btn-primary stretched-link" align= "center">See Album</a><br>                       
                         </div>
                 </div>
             </div>`
