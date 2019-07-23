@@ -38,7 +38,7 @@ function loadAlbum(){
                     <div class="card-body">
                             <h4 class="card-title">ID: ${post[connection].id}</h4>
                             <p class = "card-text">Title: ${post[connection].title}</p>
-                            <a id="alb" href="albumselect.html" class="btn btn-primary stretched-link" align= "center">See Album</a><br>                       
+                            <a href="#" class="btn btn-primary stretched-link" align= "center">See Album</a><br>                       
                         </div>
                 </div>
             </div>`
