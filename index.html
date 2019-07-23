@@ -2,7 +2,13 @@
 <html>
 
 <head>
-    <title>Your Photo Album</title>
+    <title>Your Photo Collection</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -29,8 +35,11 @@
                 </div>
             </nav>
         <div class = "container">
+                <div class="page-header">
+                        <h1>Your Photos</h1>      
+                </div> 
                 <div class ="row">
-                    <button id = "btn" type = "button" class="mt-3 mx-auto btn btn-primary">Next Photo</button>
+                    <button id = "btn" type = "button" class="mt-3 mx-auto btn btn-primary">Next</button>
                 </div><br><br><br>
                 <div class="row" id="cardDiv"></div>
             </div>

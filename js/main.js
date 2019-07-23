@@ -31,13 +31,13 @@ function loadAlbum(){
         for (let index = 0; index < 10; index++) {
             div.innerHTML+=`
             <div class="card-columns" style="width:1200px">
-            <div class="col-sm-6">
-                <img class="card-img-top" src="assets/img/album.png" alt="Card image" style="width:50%">
-                    <div class="card-body">
-                        <h4 class="card-title">ID: ${post[connection].id}</h4>
-                        <p class = "card-text">Title: ${post[connection].title}</p>
-                        <a href="#" class="btn btn-primary stretched-link">See Album</a><br>                       
-                    </div>
+                <div class="col-sm-6">
+                    <img class="card-img-top" src="assets/img/album.png" alt="Card image" style="width:50%">
+                        <div class="card-body">
+                            <h4 class="card-title">ID: ${post[connection].id}</h4>
+                            <p class = "card-text">Title: ${post[connection].title}</p>
+                            <a href="#" class="btn btn-primary stretched-link" align= "center">See Album</a><br>                       
+                        </div>
                 </div>
             </div>`
     
@@ -45,8 +45,7 @@ function loadAlbum(){
         }
     })
     .catch((error)=>{
-        console.log(error);
-    
+        console.log(error);    
     });
 }
 
@@ -55,24 +54,22 @@ function loadUser(){
     .then((post)=>{
         for (let index = 0; index <= 10; index++) {
             div.innerHTML+=`
-            <div class="card-columns" style="width:500px">
-            <div class="col-sm-6">
-                <img class="card-img-top img-fluid" src="assets/img/album.png" alt="Card image" style="width:50%">
-                    <div class="card-body">
+            <div class="card-columns" style="width:600px">
+            <div class="col-sm-4">
+                <img class="card-img-top img-fluid" src="assets/img/user.png" align= "center" alt="Card image" style="width:50%">
+                    <div class="card-body"><br>
                         <p class = "card-text">${post[connection].name}</p>
                         <p class = "card-text">${post[connection].username}</p>
                         <p class = "card-text">${post[connection].email}</p>
-                        <a href="#" class="btn btn-primary stretched-link">Select User</a><br>                       
+                        <a href="#" class="btn btn-primary stretched-link" >Select User</a><br><br>                       
                     </div>
                 </div>
-            </div>`
-    
+            </div>`    
             connection = connection + 1;
         }
     })
     .catch((error)=>{
-        console.log(error);
-    
+        console.log(error);    
     });
 }
 
@@ -82,14 +79,14 @@ function loadPhotos(){
         return res.json();
     })
     .then((post)=>{
-        for (let index = 0; index < 1; index++) {
+        for (let index = 0; index < 2; index++) {
             div.innerHTML+=`
-            <div class="card-columns" style="width:900px">
-            <div class="col-sm-8">
+            <div class="card-columns" style="width:1200px">
+            <div class="col-sm-6">
                 <img class="card-img-top img-fluid" src="${post[connection].thumbnailUrl}" alt="Card image" style="width:50%">
                     <div class="card-body">
                         <h4 class = "card-title">ID: ${post[connection].id}</h4>
-                        <p class = "card-text">${post[connection].title}</p>                                              
+                        <p class = "card-text">${post[connection].title}</p><br><br>                                              
                     </div>
                 </div>
             </div>`
