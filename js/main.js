@@ -85,7 +85,7 @@ function loadPhotos(){
             div.innerHTML+=`
             <div class="card-columns" style="width:1200px">
             <div class="col-sm-6">
-                <img class="card-img-top img-fluid" src="${post[connection].thumbnailUrl}" alt="Card image" style="width:50%">
+                <img id="myImg" class="card-img-top img-fluid" src="${post[connection].thumbnailUrl}" alt="Card image" style="width:50%">
                     <div class="card-body">
                         <h4 class = "card-title">ID: ${post[connection].id}</h4>
                         <p class = "card-text">${post[connection].title}</p><br><br>                                              
